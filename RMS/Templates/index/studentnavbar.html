@@ -1,0 +1,111 @@
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: powderblue;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2px 0;
+        }
+
+        nav {
+            background-color: #00A36C;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .class-roster {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .quick-overview {
+            margin-top: 20px;
+        }
+
+        .overview-item {
+            background-color: #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+      .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            background-color: #fff;
+            transition: transform 0.3s;
+            width: 30%; /* Adjust the width as needed */
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>Student Dashboard</h1>
+</header>
+
+  <nav>
+    <a href="{% url 'studenthomepage' %}">Home</a>
+    <a href="{% url 'logout' %}">logout</a>
+    <a href="#">Grades</a>
+      <a href="{% url 'view_courses' %}">View coursers</a>
+  </nav>
+{% block body %}
+
+ {% endblock %}
+
+</body>
+
+</html>

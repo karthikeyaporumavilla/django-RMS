@@ -1,0 +1,15 @@
+{% extends 'index/facultynavbar.html' %}
+
+{% block body %}
+  <h1>Your Exam Results</h1>
+  <div class="card-container">
+    {% for result in exam_results %}
+      <div class="card">
+        <h2>{{ result.course.course_name }}</h2>
+        <p>Exam Type: {{ result.exam_type }}</p>
+        <p>Max Marks: {{ result.max_marks }}</p>
+        <p>Marks Scored: {{ result.marks_obtained }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

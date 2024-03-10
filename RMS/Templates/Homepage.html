@@ -1,0 +1,51 @@
+{% extends 'index/index.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project home page</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+    {% block body %}
+
+    <div class="container">
+
+        <h1>Welcome to the Result Management System</h1>
+        <p>This system allows you to manage and view student results, courses, and more.</p>
+
+        <div class="card">
+            <a href="{% url 'studentlogin' %}" style="text-decoration: none;">
+            <h2><font color="black">Student Login</font></h2>
+            <p><font color="black">Currently, there are 2000 students using the system.</font></p>
+            </a>
+        </div>
+
+         <div class="card">
+            <a href="{% url 'facultylogin' %}" style="text-decoration: none;">
+            <h2><font color="black">Faculty Login</font></h2>
+            <p><font color="black">Currently, there are 500 faculty using the system.</font></p>
+            </a>
+        </div>
+
+          <div class="card">
+            <a href="{% url 'login' %}" style="text-decoration: none;">
+            <h2><font color="black">Admin Login</font></h2>
+            <p><font color="black">Currently, there are 50 Admins using the system.</font></p>
+            </a>
+        </div>
+        <!-- Add more cards as needed -->
+
+    </div>
+
+    {% endblock %}
+
+</body>
+</html>

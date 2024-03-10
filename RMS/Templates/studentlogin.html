@@ -1,0 +1,28 @@
+{% extends 'index/index.html' %}
+{% block body %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+</head>
+<body>
+    <h1>Student Login</h1>
+    <div class="login-container">
+        <form method="post" action="{% url 'checkstudentlogin' %}">
+            {% csrf_token %}
+            <label for="username">Student ID:</label>
+            <input type="text" id="username" name="uname" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="pwd" required>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+</body>
+</html>
+
+{% endblock %}

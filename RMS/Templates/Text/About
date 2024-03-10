@@ -1,0 +1,19 @@
+Result Management System:
+
+=>Modules:
+1.Admin.
+2.Student.
+3.Faculty.
+
+=>Flow of Admin Module:
+1.This modules contains mainly a signup page for new admins.
+2.After this creating  a new Admin in the signup page which redirects to the Login Page
+3.After entering into the home page bypassing login page here we see the NavBar[Admin Navbar]
+
+=>Functions of AdminModule:
+1.Add Students ->Adds new students into database basically acts as a Signup for new students but only admin can register
+                new students.
+2.View Students->Can view all the students in the database and delete or update students information and even can map
+                students to faculty.
+3.Add Faculty  ->Adds new faculty into system similarly acts as 'Add Students' function
+4.View Faculty ->Shows the faculty information and list of them and who they are mapped to

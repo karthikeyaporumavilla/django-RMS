@@ -1,0 +1,50 @@
+{% extends 'index/index.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+
+</head>
+<body>
+{% block body %}
+<div>
+    <h1>Registration</h1>
+</div>
+    <div class="signup-container">
+        <form method="post" action="{% url 'checkregistration' %}">
+            {% csrf_token %}
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="departmentId">Department ID:</label>
+            <input type="text" id="departmentId" name="departmentId" required>
+
+            <label for="departmentName">Department Name:</label>
+            <input type="text" id="departmentName" name="departmentName" required>
+
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+
+{% endblock %}
+</body>
+</html>

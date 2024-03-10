@@ -1,0 +1,8 @@
+23/02/24
+-add update and delete buttons in views pages of both faculty and student.
+-give the allow to all remaining admins in the admin table.
+-give few attractive transitions to home page .
+-give all the needed bg images.
+-create a link in the admin navbar that access the change password.
+-modify the add faculty and add student html pages form code according to database.
+-delete the entries of department name and department id tables ,even delete them from the database.

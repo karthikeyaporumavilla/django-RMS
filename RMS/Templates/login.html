@@ -1,0 +1,88 @@
+{% extends 'index/index.html' %}
+{% block body %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+</head>
+<body>
+    <h1>Admin Login</h1>
+    <div class="login-container">
+        <form method="post" action="{% url 'checkadminlogin' %}">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="uname" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="pwd" required>
+
+<!--            <label for="captcha">CAPTCHA:</label>-->
+<!--            <input type="text" id="captchaInput" name="captchaInput" required>-->
+<!--            <img id="captchaImage" src="" alt="CAPTCHA">-->
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+<!--    <script>-->
+<!--    // Random CAPTCHA generator-->
+<!--    function generateCaptcha() {-->
+<!--        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';-->
+<!--        var captcha = '';-->
+<!--        for (var i = 0; i < 4; i++) {-->
+<!--            captcha += characters.charAt(Math.floor(Math.random() * characters.length));-->
+<!--        }-->
+<!--        return captcha;-->
+<!--    }-->
+
+<!--    // Update CAPTCHA image and input field-->
+<!--    function updateCaptcha() {-->
+<!--        var captcha = generateCaptcha();-->
+<!--        document.getElementById("captchaInput").value = '';-->
+<!--        document.getElementById("captchaImage").src = 'data:image/png;base64,' + generateCaptchaImage(captcha);-->
+<!--        document.getElementById("captchaImage").alt = captcha.toLowerCase(); // Store the lowercase value for comparison-->
+<!--    }-->
+
+<!--    // Simple CAPTCHA image generator (for demonstration purposes)-->
+<!--    function generateCaptchaImage(text) {-->
+<!--        var canvas = document.createElement('canvas');-->
+<!--        canvas.width = 100;-->
+<!--        canvas.height = 50;-->
+<!--        var ctx = canvas.getContext('2d');-->
+
+<!--        // Draw background-->
+<!--        ctx.fillStyle = '#f4f4f4';-->
+<!--        ctx.fillRect(0, 0, canvas.width, canvas.height);-->
+
+<!--        // Draw text-->
+<!--        ctx.font = '20px Arial';-->
+<!--        ctx.fillStyle = '#333';-->
+<!--        ctx.fillText(text, 25, 30);-->
+
+<!--        return canvas.toDataURL().split(',')[1];-->
+<!--    }-->
+
+<!--    // Initial CAPTCHA generation-->
+<!--    updateCaptcha();-->
+
+<!--    // Event listener for form submission-->
+<!--     document.getElementById("loginForm").addEventListener("submit", function(event) {-->
+<!--        var captchaInput = document.getElementById("captchaInput").value.toLowerCase();-->
+<!--        var captchaValue = document.getElementById("captchaImage").alt.toLowerCase();-->
+
+<!--        if (captchaInput !== captchaValue) {-->
+<!--            alert("CAPTCHA verification failed. Please try again.");-->
+<!--            updateCaptcha();-->
+<!--            event.preventDefault();  // Prevent the form from submitting if CAPTCHA is incorrect-->
+<!--        } else {-->
+<!--            // Continue with the form submission-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
+
+</body>
+</html>
+
+{% endblock %}

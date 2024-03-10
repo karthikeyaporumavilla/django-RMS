@@ -1,0 +1,19 @@
+19/02/24
+-Need to Plan all four functions of the Admin module.--------[completed]
+-Planing Functions of Student Module .
+-Planing Functions of faculty module .
+-Creating Add Students and Add Faculty page codes
+    [which works as the SignUp for both modules but present in the Admin module]---------[completed].
+-Linking the pages in urls and views in admin module --------[completed].
+-Creating a coding on remaining modules NavBar's .
+-creating a student app as admin app--------[completed].
+-creating a faculty app as admin app--------[completed].
+-link student app and faculty app to settings in RMS.
+21/02/24
+-in above tasks the linking or registration of faculty has failed so the variables and constraints should be changed
+-need to create new table with different constraints and variables .
+-creating or linking validation again .
+-same goes with the other site as student .
+-after that should follow the displays of the database .
+-this comes under the view of students and faculty .
+-continues in 'planing of modules'.

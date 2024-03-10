@@ -1,0 +1,45 @@
+{% extends 'index/facultynavbar.html' %}
+{% block body %}
+<body>
+    <div class="container2">
+        <form method="post">
+            {% csrf_token %}
+
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" required>
+
+            <label for="branch">Branch:</label>
+            <input type="text" id="branch" name="branch" required>
+
+            <label for="course">Course:</label>
+            <select id="course" name="course" required>
+                {% for course in courses %}
+                    <option value="{{ course.course_code }}">{{ course.course_name }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="examType">Exam Type:</label>
+            <select id="examType" name="examType" required>
+                <option value="semin1">Sem-in-1</option>
+                <option value="semin1lab">Sem-in-1-lab</option>
+                <option value="semin2">Sem-in-2</option>
+                <option value="semin2lab">Sem-in-2-lab</option>
+                <option value="endsemtheory">EndSem-Theory</option>
+                <option value="endsemlab">EndSemLab</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="maxMarks">Maximum Marks:</label>
+            <input type="number" id="maxMarks" name="maxMarks" required>
+
+            <label for="marksObtained">Marks Obtained:</label>
+            <input type="number" id="marksObtained" name="marksObtained" required>
+
+            <label for="remarks">Remarks:</label>
+            <textarea id="remarks" name="remarks" rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+{% endblock %}

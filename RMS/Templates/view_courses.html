@@ -1,0 +1,16 @@
+{% extends 'studentnavbar.html' %}
+{% block body %}
+  <h1>All Courses</h1>
+  <div class="card-container">
+    {% for detail in course_details %}
+      <div class="card">
+        <a href="{% url 'course_details' course_code=detail.course.course_code student_username=request.user.username %}">
+          <h2>{{ detail.course.course_name }}</h2>
+          <p>Code: {{ detail.course.course_code }}</p>
+          <p>Max Marks: {{ detail.exam_result.max_marks }}</p>
+          <p>Marks Obtained: {{ detail.exam_result.marks_obtained }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

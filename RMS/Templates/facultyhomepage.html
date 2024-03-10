@@ -1,0 +1,50 @@
+{% extends 'index/facultynavbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project home page</title>
+</head>
+<body>
+
+{% block body %}
+<div >
+    <h1>Faculty Dashboard</h1>
+</div>
+    <div class="container">
+         <section class="quick-overview">
+            <h2>Quick Overview</h2>
+            <div class="overview-item">Total Students: {{ total_students }}</div>
+<!--            <div class="overview-item">Average Grade: {{ average_grade }}</div>-->
+<!--            <div class="overview-item">Upcoming Assignments: {{ upcoming_assignments }}</div>-->
+        </section>
+        <section class="class-roster">
+            <h2>Class Register</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Serial Number</th>
+                        <th>Name</th>
+                        <th>Branch</th>
+                        <th>Post Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ student.first_name }} {{ student.last_name }}</td>
+                            <td>{{ student.department_name }}</td>
+                            <td><a href="{% url 'post_marks' %}">postmarks</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+{% endblock %}
+
+</body>
+</html>

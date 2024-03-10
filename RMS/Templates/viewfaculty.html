@@ -1,0 +1,32 @@
+{% extends 'index/adminnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {% block body %}
+    <div>
+        <h1>View Faculty</h1>
+    </div>
+    {% for i in facultydata %}
+        <div class="card">
+            <h2>{{ i.fname }} {{ i.lname }}</h2>
+            <p><strong>Faculty ID:</strong> {{ i.uname }}</p>
+            <p><strong>Phone Number:</strong> {{ i.pnumber }}</p>
+            <p><strong>Email ID:</strong> {{ i.kmail }}</p>
+            <p><strong>Department ID:</strong> {{ i.did }}</p>
+            <p><strong>Department Name:</strong> {{ i.dname }}</p>
+
+
+            <form method="POST" action="{% url 'delete_faculty' %}">
+                {% csrf_token %}
+                <input type="hidden" name="faculty_id" value="{{ i.id }}">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>
