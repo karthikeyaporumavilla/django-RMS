@@ -8,7 +8,3 @@ It includes user authentication, CRUD functionalities, and role-based access con
 - User-friendly UI with Django templates.
 - Secure login and role-based permissions.
 - Database management using Django ORM.
-
-
-## Setup
-1. Clone the repository:
